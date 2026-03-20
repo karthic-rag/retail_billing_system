@@ -30,6 +30,22 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(cors -> cors.configure(http))
                 .authorizeHttpRequests(req -> req
+                        // Allow the React SPA to load without a JWT.
+                        // The frontend handles redirects (e.g., to /login) for protected routes.
+                        .requestMatchers(
+                                "/",
+                                "/index.html",
+                                "/login",
+                                "/explore",
+                                "/orders",
+                                "/category",
+                                "/users",
+                                "/items",
+                                "/assets/**",
+                                "/favicon.ico",
+                                "/manifest.json",
+                                "/robots.txt"
+                        ).permitAll()
                         .requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .requestMatchers("/categories/**", "/items/**", "/orders/**", "/payments/**", "/dashboard").hasAnyRole("USER","ADMIN")
