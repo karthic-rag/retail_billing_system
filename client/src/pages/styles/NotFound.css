@@ -1,0 +1,61 @@
+.notfound-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc 0%, #ffe3e3 100%);
+}
+
+.notfound-content {
+  background: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.12);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.notfound-animation {
+  margin-bottom: 1.5rem;
+}
+
+.notfound-title {
+  font-size: 4rem;
+  color: #ff6b6b;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.notfound-subtitle {
+  font-size: 1.5rem;
+  color: #22223b;
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 600;
+}
+
+.notfound-message {
+  color: #6c757d;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.notfound-home-btn {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: #ff6b6b;
+  color: #fff;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.12);
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+.notfound-home-btn:hover {
+  background: #fa5252;
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.18);
+}
