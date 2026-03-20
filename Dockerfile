@@ -7,7 +7,8 @@ COPY . .
 
 # Run the build from the root, targeting the backend pom
 # This triggers the frontend-maven-plugin to build your 'client' folder
-RUN mvn -f backend/pom.xml clean package -DskipTests
+# Adding -e and -DshowStacktrace for more info
+RUN mvn -f backend/pom.xml clean package -DskipTests -e
 
 # Stage 2: Runtime using JRE 21 (Slimmer image)
 FROM eclipse-temurin:21-jre-jammy

@@ -150,7 +150,12 @@
                     <execution>
                         <id>npm build</id>
                         <goals><goal>npm</goal></goals>
-                        <configuration><arguments>run build</arguments></configuration>
+                        <configuration>
+                            <arguments>run build</arguments>
+                            <environmentVariables>
+                                <CI>false</CI>
+                            </environmentVariables>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
