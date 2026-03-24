@@ -42,6 +42,7 @@ public class SecurityConfig {
                                 "/users",
                                 "/items",
                                 "/assets/**",
+                                "/vite.svg",
                                 "/favicon.ico",
                                 "/manifest.json",
                                 "/robots.txt"
