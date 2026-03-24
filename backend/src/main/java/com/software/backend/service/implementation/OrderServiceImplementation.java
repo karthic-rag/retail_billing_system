@@ -14,6 +14,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.data.domain.Pageable;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.time.LocalDate;
@@ -97,6 +98,7 @@ public class OrderServiceImplementation implements OrderService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<OrderResponse> getLatestOrder() {
         return orderRepository.findAllByOrderByCreatedAtDesc()
                 .stream()
@@ -135,6 +137,7 @@ public class OrderServiceImplementation implements OrderService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<OrderResponse> findByRecentOrders() {
 
         Pageable pageable = PageRequest.of(
