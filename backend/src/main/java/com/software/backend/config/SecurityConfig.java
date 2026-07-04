@@ -34,6 +34,7 @@ public class SecurityConfig {
                         // The frontend handles redirects (e.g., to /login) for protected routes.
                         .requestMatchers(
                                 "/",
+                                "/actuator/**",
                                 "/index.html",
                                 "/login",
                                 "/explore",
